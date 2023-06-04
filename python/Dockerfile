@@ -1,4 +1,4 @@
-FROM python:3.10-alpine
+FROM python:3.10.11-bullseye
 
 LABEL maintainer="vladneum@gmail.com"
 
@@ -7,6 +7,8 @@ WORKDIR /app
 COPY requirements/backend.in .
 
 RUN pip install --no-cache-dir -r backend.in
+
+RUN pip install numpy==1.22.0
 
 COPY . .
 
